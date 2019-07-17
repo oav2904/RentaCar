@@ -11,7 +11,7 @@ namespace Entities
         public int ID { get; set; }
         public int Cliente { get; set; }
         public int Vehiculo { get; set; }
-        public int Costo { get; set; }
+        public double Costo { get; set; }
         public DateTime FechaInicio { get;set; }
         public DateTime FechaFinal { get; set; }
 

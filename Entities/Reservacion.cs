@@ -6,8 +6,16 @@ using System.Threading.Tasks;
 
 namespace Entities
 {
-    class Reservacion
+     public class Reservacion
     {
+        public int ID { get; set; }
+        public int Vehículo { get; set; }
+        public DateTime FechaInicio { get; set; }
+        public DateTime FechaFinal { get; set; }
+        public int Cliente { get; set; }
+        public bool Activo { get; set; }
+        public string Estado { get; set; }
+        public double Costo { get; set; }
 
     }
 }
