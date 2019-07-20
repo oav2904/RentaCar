@@ -41,7 +41,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClienteBOL.cs" />
+    <Compile Include="FacturaBOL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReservacionBOL.cs" />
+    <Compile Include="SedesBOL.cs" />
+    <Compile Include="UsuarioBOL.cs" />
+    <Compile Include="VehiculoBOL.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{eebf7e0e-957c-4a36-8cfb-1f1a6e86760f}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entities\ENTITIES.csproj">
+      <Project>{3f6462a5-de60-4f3c-a8f3-7bcabb13524c}</Project>
+      <Name>ENTITIES</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace Entities
 {
-    class Usuario
+     public class Usuario
     {
         public int ID { get; set; }
         public string Nombre { get; set; }
-        public string PrimerApellido { get; set; }
-        public string SegundoApellido { get; set; }
+        public string ApellidoUno { get; set; }
+        public string ApellidoDos { get; set; }
         public string User { get; set; }
         public string Password { get; set; }
         public bool Activo { get; set; }
