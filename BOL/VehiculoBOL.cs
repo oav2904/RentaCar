@@ -15,7 +15,7 @@ namespace BOL
         public void Guardar(Vehiculo vehiculo)
         {
 
-            validar(vehiculo);
+            Validar(vehiculo);
 
             if (vehiculo.ID > 0)
             {
