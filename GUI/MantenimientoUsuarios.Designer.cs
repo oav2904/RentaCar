@@ -36,14 +36,12 @@
             this.txtReContrasenna = new System.Windows.Forms.TextBox();
             this.txtContrasenna = new System.Windows.Forms.TextBox();
             this.txtUsuario = new System.Windows.Forms.TextBox();
-            this.txtCedula = new System.Windows.Forms.TextBox();
             this.txtSApellido = new System.Windows.Forms.TextBox();
             this.txtPApellido = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lblPassword = new System.Windows.Forms.Label();
             this.lblUsuario = new System.Windows.Forms.Label();
-            this.lblCedula = new System.Windows.Forms.Label();
             this.lblApellidoDos = new System.Windows.Forms.Label();
             this.lblApellidoUno = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
@@ -60,14 +58,12 @@
             this.panel1.Controls.Add(this.txtReContrasenna);
             this.panel1.Controls.Add(this.txtContrasenna);
             this.panel1.Controls.Add(this.txtUsuario);
-            this.panel1.Controls.Add(this.txtCedula);
             this.panel1.Controls.Add(this.txtSApellido);
             this.panel1.Controls.Add(this.txtPApellido);
             this.panel1.Controls.Add(this.txtNombre);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.lblPassword);
             this.panel1.Controls.Add(this.lblUsuario);
-            this.panel1.Controls.Add(this.lblCedula);
             this.panel1.Controls.Add(this.lblApellidoDos);
             this.panel1.Controls.Add(this.lblApellidoUno);
             this.panel1.Controls.Add(this.lblNombre);
@@ -105,7 +101,7 @@
             // 
             // txtReContrasenna
             // 
-            this.txtReContrasenna.Location = new System.Drawing.Point(140, 242);
+            this.txtReContrasenna.Location = new System.Drawing.Point(140, 232);
             this.txtReContrasenna.Name = "txtReContrasenna";
             this.txtReContrasenna.PasswordChar = '*';
             this.txtReContrasenna.Size = new System.Drawing.Size(100, 20);
@@ -113,7 +109,7 @@
             // 
             // txtContrasenna
             // 
-            this.txtContrasenna.Location = new System.Drawing.Point(140, 213);
+            this.txtContrasenna.Location = new System.Drawing.Point(140, 184);
             this.txtContrasenna.Name = "txtContrasenna";
             this.txtContrasenna.PasswordChar = '*';
             this.txtContrasenna.Size = new System.Drawing.Size(100, 20);
@@ -121,17 +117,10 @@
             // 
             // txtUsuario
             // 
-            this.txtUsuario.Location = new System.Drawing.Point(140, 177);
+            this.txtUsuario.Location = new System.Drawing.Point(140, 141);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(100, 20);
             this.txtUsuario.TabIndex = 60;
-            // 
-            // txtCedula
-            // 
-            this.txtCedula.Location = new System.Drawing.Point(140, 134);
-            this.txtCedula.Name = "txtCedula";
-            this.txtCedula.Size = new System.Drawing.Size(100, 20);
-            this.txtCedula.TabIndex = 59;
             // 
             // txtSApellido
             // 
@@ -157,7 +146,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(11, 249);
+            this.label1.Location = new System.Drawing.Point(26, 239);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(108, 13);
             this.label1.TabIndex = 55;
@@ -166,7 +155,7 @@
             // lblPassword
             // 
             this.lblPassword.AutoSize = true;
-            this.lblPassword.Location = new System.Drawing.Point(58, 220);
+            this.lblPassword.Location = new System.Drawing.Point(59, 191);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(61, 13);
             this.lblPassword.TabIndex = 54;
@@ -175,20 +164,11 @@
             // lblUsuario
             // 
             this.lblUsuario.AutoSize = true;
-            this.lblUsuario.Location = new System.Drawing.Point(76, 184);
+            this.lblUsuario.Location = new System.Drawing.Point(76, 148);
             this.lblUsuario.Name = "lblUsuario";
             this.lblUsuario.Size = new System.Drawing.Size(43, 13);
             this.lblUsuario.TabIndex = 53;
             this.lblUsuario.Text = "Usuario";
-            // 
-            // lblCedula
-            // 
-            this.lblCedula.AutoSize = true;
-            this.lblCedula.Location = new System.Drawing.Point(76, 141);
-            this.lblCedula.Name = "lblCedula";
-            this.lblCedula.Size = new System.Drawing.Size(40, 13);
-            this.lblCedula.TabIndex = 52;
-            this.lblCedula.Text = "Cedula";
             // 
             // lblApellidoDos
             // 
@@ -254,14 +234,12 @@
         private System.Windows.Forms.TextBox txtReContrasenna;
         private System.Windows.Forms.TextBox txtContrasenna;
         private System.Windows.Forms.TextBox txtUsuario;
-        private System.Windows.Forms.TextBox txtCedula;
         private System.Windows.Forms.TextBox txtSApellido;
         private System.Windows.Forms.TextBox txtPApellido;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblPassword;
         private System.Windows.Forms.Label lblUsuario;
-        private System.Windows.Forms.Label lblCedula;
         private System.Windows.Forms.Label lblApellidoDos;
         private System.Windows.Forms.Label lblApellidoUno;
         private System.Windows.Forms.Label lblNombre;
