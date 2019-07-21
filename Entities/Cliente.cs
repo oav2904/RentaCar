@@ -10,8 +10,8 @@ namespace Entities
     {
         public int ID { set; get;}
         public string Nombre { set; get; }
-        public string PrimerApellido { get; set; }
-        public string SegundoApellido { get; set; }
+        public string ApellidoUno { get; set; }
+        public string ApellidoDos { get; set; }
         public int Cedula { get; set; }
     }
 }

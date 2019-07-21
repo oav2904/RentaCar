@@ -10,13 +10,13 @@ namespace BOL
 {
     public class UsuarioBOL
     {
-        UsuarioDAL usdao = new UsuarioDAL();
+        private UsuarioDAL usdao = new UsuarioDAL();
 
         public void guardar(Usuario us, string repass)
         {
 
             validar(us, repass);
-            //us.Password = md5(us.Password);
+           
             if (us.ID > 0)
             {
                 usdao.Actualizar(us);
@@ -36,8 +36,6 @@ namespace BOL
             {
                 throw new Exception("Usuario y Contraseña requeridos");
             }
-
-
 
             return usdao.Iniciar(u);
         }

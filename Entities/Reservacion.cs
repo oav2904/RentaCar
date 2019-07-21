@@ -9,7 +9,7 @@ namespace Entities
      public class Reservacion
     {
         public int ID { get; set; }
-        public int Vehículo { get; set; }
+        public int Vehiculos { get; set; }
         public DateTime FechaInicio { get; set; }
         public DateTime FechaFinal { get; set; }
         public int Cliente { get; set; }
