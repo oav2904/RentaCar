@@ -19,11 +19,11 @@ namespace BOL
 
             if (reservacion.ID > 0)
             {
-                reserva.Actualizar(reservacion);
+               // reserva.Actualizar(reservacion);
             }
             else
             {
-                reserva.Insertar(reservacion);
+               // reserva.Insertar(reservacion);
 
             }
 
@@ -36,7 +36,7 @@ namespace BOL
             {
                 throw new Exception("Seleccione una reservacion");
             }
-            reserva.Eliminar(reservacion);
+            //reserva.Eliminar(reservacion);
         }
 
         public void Validar(Reservacion reservacion)

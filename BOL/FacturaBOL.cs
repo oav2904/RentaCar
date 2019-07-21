@@ -19,11 +19,11 @@ namespace BOL
 
             if (factura.ID > 0)
             {
-                fadao.Actualizar(factura);
+               // fadao.Actualizar(factura);
             }
             else
             {
-                fadao.Insertar(factura);
+                //fadao.Insertar(factura);
 
             }
 
@@ -36,7 +36,7 @@ namespace BOL
             {
                 throw new Exception("Seleccione una factura");
             }
-            fadao.Eliminar(factura);
+            //fadao.Eliminar(factura);
         }
 
         public void Validar( Factura factura)

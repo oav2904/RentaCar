@@ -18,11 +18,11 @@ namespace BOL
 
             if (sedes.ID > 0)
             {
-                sedal.Actualizar(sedes);
+                //sedal.Actualizar(sedes);
             }
             else
             {
-                sedal.Insertar(sedes);
+                //sedal.Insertar(sedes);
 
             }
 
@@ -35,7 +35,7 @@ namespace BOL
             {
                 throw new Exception("Seleccione una sedes");
             }
-            sedal.Eliminar(sedes);
+           // sedal.Eliminar(sedes);
         }
 
         public void Validar(Sedes sedes)

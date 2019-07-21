@@ -15,15 +15,15 @@ namespace BOL
         public void Guardar(Cliente us)
         {
 
-            validar(us);
+            Validar(us);
             
             if (us.ID > 0)
             {
-                usdao.Actualizar(us);
+             //   usdao.Actualizar(us);
             }
             else
             {
-                usdao.Insertar(us);
+               // usdao.Insertar(us);
 
             }
 
@@ -36,7 +36,7 @@ namespace BOL
             {
                 throw new Exception("Seleccione un cliente");
             }
-            usdao.Eliminar(us);
+            //usdao.Eliminar(us);
         }
         private void Validar(Cliente u)
         {

@@ -12,42 +12,42 @@ namespace BOL
     {
         private UsuarioDAL usdao = new UsuarioDAL();
 
-        public void guardar(Usuario us, string repass)
+        public void Guardar(Usuario us, string repass)
         {
 
-            validar(us, repass);
+            Validar(us, repass);
            
             if (us.ID > 0)
             {
-                usdao.Actualizar(us);
+               // usdao.Actualizar(us);
             }
             else
             {
-                usdao.Insertar(us);
+               // usdao.Insertar(us);
 
             }
 
         }
 
-        public Usuario Iniciar(Usuario u)
+        //public Usuario Iniciar(Usuario u)
 
-        {
-            if (String.IsNullOrEmpty(u.User) || String.IsNullOrEmpty(u.Password))
-            {
-                throw new Exception("Usuario y Contraseña requeridos");
-            }
+        //{
+        //    if (String.IsNullOrEmpty(u.User) || String.IsNullOrEmpty(u.Password))
+        //    {
+        //        throw new Exception("Usuario y Contraseña requeridos");
+        //    }
 
-            return usdao.Iniciar(u);
-        }
-        public void eliminar(Usuario us)
+        //    return usdao.Iniciar(u);
+        //}
+        public void Eliminar(Usuario us)
         {
             if (us.ID <= 0 || us == null)
             {
                 throw new Exception("Seleccione un usuario");
             }
-            usdao.Eliminar(us);
+            //usdao.Eliminar(us);
         }
-        private void validar(Usuario u, string repass)
+        private void Validar(Usuario u, string repass)
         {
             if (u == null)
             {
