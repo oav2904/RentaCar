@@ -42,6 +42,7 @@
             this.lblApellidoUno = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblEstado = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.tblUs)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -86,28 +87,28 @@
             // 
             // txtCedula
             // 
-            this.txtCedula.Location = new System.Drawing.Point(140, 134);
+            this.txtCedula.Location = new System.Drawing.Point(124, 27);
             this.txtCedula.Name = "txtCedula";
             this.txtCedula.Size = new System.Drawing.Size(100, 20);
             this.txtCedula.TabIndex = 59;
             // 
             // txtSApellido
             // 
-            this.txtSApellido.Location = new System.Drawing.Point(140, 99);
+            this.txtSApellido.Location = new System.Drawing.Point(124, 123);
             this.txtSApellido.Name = "txtSApellido";
             this.txtSApellido.Size = new System.Drawing.Size(100, 20);
             this.txtSApellido.TabIndex = 58;
             // 
             // txtPApellido
             // 
-            this.txtPApellido.Location = new System.Drawing.Point(140, 54);
+            this.txtPApellido.Location = new System.Drawing.Point(124, 78);
             this.txtPApellido.Name = "txtPApellido";
             this.txtPApellido.Size = new System.Drawing.Size(100, 20);
             this.txtPApellido.TabIndex = 57;
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(140, 7);
+            this.txtNombre.Location = new System.Drawing.Point(124, 52);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(100, 20);
             this.txtNombre.TabIndex = 56;
@@ -115,7 +116,7 @@
             // lblCedula
             // 
             this.lblCedula.AutoSize = true;
-            this.lblCedula.Location = new System.Drawing.Point(76, 141);
+            this.lblCedula.Location = new System.Drawing.Point(64, 34);
             this.lblCedula.Name = "lblCedula";
             this.lblCedula.Size = new System.Drawing.Size(40, 13);
             this.lblCedula.TabIndex = 52;
@@ -124,7 +125,7 @@
             // lblApellidoDos
             // 
             this.lblApellidoDos.AutoSize = true;
-            this.lblApellidoDos.Location = new System.Drawing.Point(26, 106);
+            this.lblApellidoDos.Location = new System.Drawing.Point(10, 130);
             this.lblApellidoDos.Name = "lblApellidoDos";
             this.lblApellidoDos.Size = new System.Drawing.Size(90, 13);
             this.lblApellidoDos.TabIndex = 51;
@@ -133,7 +134,7 @@
             // lblApellidoUno
             // 
             this.lblApellidoUno.AutoSize = true;
-            this.lblApellidoUno.Location = new System.Drawing.Point(44, 61);
+            this.lblApellidoUno.Location = new System.Drawing.Point(28, 85);
             this.lblApellidoUno.Name = "lblApellidoUno";
             this.lblApellidoUno.Size = new System.Drawing.Size(76, 13);
             this.lblApellidoUno.TabIndex = 50;
@@ -142,7 +143,7 @@
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(76, 14);
+            this.lblNombre.Location = new System.Drawing.Point(60, 68);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(44, 13);
             this.lblNombre.TabIndex = 49;
@@ -166,20 +167,31 @@
             this.panel1.Size = new System.Drawing.Size(278, 248);
             this.panel1.TabIndex = 54;
             // 
+            // lblEstado
+            // 
+            this.lblEstado.AutoSize = true;
+            this.lblEstado.Location = new System.Drawing.Point(12, 287);
+            this.lblEstado.Name = "lblEstado";
+            this.lblEstado.Size = new System.Drawing.Size(0, 13);
+            this.lblEstado.TabIndex = 56;
+            // 
             // MantenimientoClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1045, 321);
+            this.Controls.Add(this.lblEstado);
             this.Controls.Add(this.tblUs);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MantenimientoClientes";
             this.Text = "MantenimientoClientes";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MantenimientoClientes_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.tblUs)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -198,5 +210,6 @@
         private System.Windows.Forms.Label lblApellidoUno;
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label lblEstado;
     }
 }

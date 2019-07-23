@@ -13,5 +13,6 @@ namespace Entities
         public string ApellidoUno { get; set; }
         public string ApellidoDos { get; set; }
         public int Cedula { get; set; }
+        public Boolean Activo { get; set; }
     }
 }

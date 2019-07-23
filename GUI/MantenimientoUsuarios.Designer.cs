@@ -218,6 +218,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MantenimientoUsuarios";
             this.Text = "MantenimientoUsuarios";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MantenimientoUsuarios_FormClosing);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tblUs)).EndInit();

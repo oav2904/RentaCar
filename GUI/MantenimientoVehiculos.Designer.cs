@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MantenimientoVehiculos));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cbanno = new System.Windows.Forms.ComboBox();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
@@ -41,20 +42,20 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtCosto = new System.Windows.Forms.MaskedTextBox();
-            this.spnAnno = new System.Windows.Forms.NumericUpDown();
             this.cmbTipo = new System.Windows.Forms.ComboBox();
             this.txtModelo = new System.Windows.Forms.TextBox();
             this.txtColor = new System.Windows.Forms.TextBox();
             this.txtNumPlaca = new System.Windows.Forms.TextBox();
-            this.cmbUsers = new System.Windows.Forms.ComboBox();
             this.tbVehiculos = new System.Windows.Forms.DataGridView();
+            this.txtUs = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.spnAnno)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbVehiculos)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.txtUs);
+            this.panel1.Controls.Add(this.cbanno);
             this.panel1.Controls.Add(this.btnEliminar);
             this.panel1.Controls.Add(this.btnGuardar);
             this.panel1.Controls.Add(this.btnNuevo);
@@ -66,16 +67,34 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.txtCosto);
-            this.panel1.Controls.Add(this.spnAnno);
             this.panel1.Controls.Add(this.cmbTipo);
             this.panel1.Controls.Add(this.txtModelo);
             this.panel1.Controls.Add(this.txtColor);
             this.panel1.Controls.Add(this.txtNumPlaca);
-            this.panel1.Controls.Add(this.cmbUsers);
             this.panel1.Location = new System.Drawing.Point(43, 36);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(264, 374);
             this.panel1.TabIndex = 0;
+            // 
+            // cbanno
+            // 
+            this.cbanno.FormattingEnabled = true;
+            this.cbanno.Items.AddRange(new object[] {
+            "2010",
+            "2011",
+            "2012",
+            "2013",
+            "2014",
+            "2015",
+            "2016",
+            "2017",
+            "2018",
+            "2019",
+            "2020"});
+            this.cbanno.Location = new System.Drawing.Point(133, 215);
+            this.cbanno.Name = "cbanno";
+            this.cbanno.Size = new System.Drawing.Size(121, 21);
+            this.cbanno.TabIndex = 4;
             // 
             // btnEliminar
             // 
@@ -136,9 +155,9 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(66, 171);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(42, 13);
+            this.label4.Size = new System.Drawing.Size(37, 13);
             this.label4.TabIndex = 10;
-            this.label4.Text = "Modelo";
+            this.label4.Text = "Marca";
             // 
             // label3
             // 
@@ -163,71 +182,69 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(60, 30);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(48, 13);
+            this.label1.Size = new System.Drawing.Size(43, 13);
             this.label1.TabIndex = 7;
-            this.label1.Text = "Usuarios";
+            this.label1.Text = "Usuario";
             // 
             // txtCosto
             // 
-            this.txtCosto.Location = new System.Drawing.Point(140, 289);
+            this.txtCosto.Location = new System.Drawing.Point(133, 289);
             this.txtCosto.Name = "txtCosto";
             this.txtCosto.Size = new System.Drawing.Size(120, 20);
             this.txtCosto.TabIndex = 6;
             // 
-            // spnAnno
-            // 
-            this.spnAnno.Location = new System.Drawing.Point(140, 211);
-            this.spnAnno.Name = "spnAnno";
-            this.spnAnno.Size = new System.Drawing.Size(120, 20);
-            this.spnAnno.TabIndex = 5;
-            // 
             // cmbTipo
             // 
             this.cmbTipo.FormattingEnabled = true;
-            this.cmbTipo.Location = new System.Drawing.Point(140, 247);
+            this.cmbTipo.Items.AddRange(new object[] {
+            "Sedán",
+            "4x4",
+            "HatchBack",
+            "Deportivo",
+            "Familiar"});
+            this.cmbTipo.Location = new System.Drawing.Point(133, 255);
             this.cmbTipo.Name = "cmbTipo";
             this.cmbTipo.Size = new System.Drawing.Size(121, 21);
-            this.cmbTipo.TabIndex = 4;
+            this.cmbTipo.TabIndex = 5;
             // 
             // txtModelo
             // 
-            this.txtModelo.Location = new System.Drawing.Point(140, 164);
+            this.txtModelo.Location = new System.Drawing.Point(133, 164);
             this.txtModelo.Name = "txtModelo";
             this.txtModelo.Size = new System.Drawing.Size(121, 20);
             this.txtModelo.TabIndex = 3;
             // 
             // txtColor
             // 
-            this.txtColor.Location = new System.Drawing.Point(140, 116);
+            this.txtColor.Location = new System.Drawing.Point(133, 120);
             this.txtColor.Name = "txtColor";
             this.txtColor.Size = new System.Drawing.Size(121, 20);
             this.txtColor.TabIndex = 2;
             // 
             // txtNumPlaca
             // 
-            this.txtNumPlaca.Location = new System.Drawing.Point(140, 68);
+            this.txtNumPlaca.Location = new System.Drawing.Point(133, 68);
             this.txtNumPlaca.Name = "txtNumPlaca";
             this.txtNumPlaca.Size = new System.Drawing.Size(121, 20);
             this.txtNumPlaca.TabIndex = 1;
-            // 
-            // cmbUsers
-            // 
-            this.cmbUsers.FormattingEnabled = true;
-            this.cmbUsers.Location = new System.Drawing.Point(140, 22);
-            this.cmbUsers.Name = "cmbUsers";
-            this.cmbUsers.Size = new System.Drawing.Size(121, 21);
-            this.cmbUsers.TabIndex = 0;
             // 
             // tbVehiculos
             // 
             this.tbVehiculos.AllowUserToAddRows = false;
             this.tbVehiculos.AllowUserToDeleteRows = false;
             this.tbVehiculos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tbVehiculos.Location = new System.Drawing.Point(356, 117);
+            this.tbVehiculos.Location = new System.Drawing.Point(343, 36);
             this.tbVehiculos.Name = "tbVehiculos";
             this.tbVehiculos.ReadOnly = true;
             this.tbVehiculos.Size = new System.Drawing.Size(650, 150);
             this.tbVehiculos.TabIndex = 54;
+            // 
+            // txtUs
+            // 
+            this.txtUs.Location = new System.Drawing.Point(132, 27);
+            this.txtUs.Name = "txtUs";
+            this.txtUs.Size = new System.Drawing.Size(121, 20);
+            this.txtUs.TabIndex = 0;
             // 
             // MantenimientoVehiculos
             // 
@@ -239,9 +256,9 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MantenimientoVehiculos";
             this.Text = "MantenimientoVehiculos";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MantenimientoVehiculos_FormClosing);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.spnAnno)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbVehiculos)).EndInit();
             this.ResumeLayout(false);
 
@@ -251,12 +268,10 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.MaskedTextBox txtCosto;
-        private System.Windows.Forms.NumericUpDown spnAnno;
         private System.Windows.Forms.ComboBox cmbTipo;
         private System.Windows.Forms.TextBox txtModelo;
         private System.Windows.Forms.TextBox txtColor;
         private System.Windows.Forms.TextBox txtNumPlaca;
-        private System.Windows.Forms.ComboBox cmbUsers;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
@@ -268,5 +283,7 @@
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.DataGridView tbVehiculos;
+        private System.Windows.Forms.ComboBox cbanno;
+        private System.Windows.Forms.TextBox txtUs;
     }
 }

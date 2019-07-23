@@ -10,7 +10,7 @@ namespace BOL
 {
     public class ClienteBOL
     {
-        private ClienteDAL usdao = new ClienteDAL();
+        private ClienteDAL cdal = new ClienteDAL();
 
         public void Guardar(Cliente us)
         {
@@ -19,11 +19,11 @@ namespace BOL
             
             if (us.ID > 0)
             {
-             //   usdao.Actualizar(us);
+                cdal.Actualizar(us);
             }
             else
             {
-               // usdao.Insertar(us);
+                cdal.Insertar(us);
 
             }
 
@@ -36,7 +36,7 @@ namespace BOL
             {
                 throw new Exception("Seleccione un cliente");
             }
-            //usdao.Eliminar(us);
+            cdal.Eliminar(us);
         }
         private void Validar(Cliente u)
         {

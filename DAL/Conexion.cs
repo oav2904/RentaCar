@@ -11,7 +11,7 @@ namespace DAL
     class Conexion
     {
 
-        static private string CadenaConexion = "Data Source=.;Initial Catalog= ProyectoRestaurante;Integrated Security=True";
+        static private string CadenaConexion = "Data Source=.;Initial Catalog=ProyectoRentACar;Integrated Security=True";
         private SqlConnection conexion = new SqlConnection(CadenaConexion);
         public SqlConnection AbrirConexion()
         {

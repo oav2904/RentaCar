@@ -19,11 +19,11 @@ namespace BOL
 
             if (vehiculo.ID > 0)
             {
-               // vedal.Actualizar(vehiculo);
+                vedal.Actualizar(vehiculo);
             }
             else
             {
-             //   vedal.Insertar(vehiculo);
+                vedal.Insertar(vehiculo);
 
             }
 
@@ -35,7 +35,7 @@ namespace BOL
             {
                 throw new Exception("Seleccione un usuario");
             }
-           // vedal.Eliminar(vehiculo);
+            vedal.Eliminar(vehiculo);
         }
 
         private void Validar(Vehiculo vehiculo)
