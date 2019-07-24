@@ -115,7 +115,7 @@
             this.txtModelo.Location = new System.Drawing.Point(133, 145);
             this.txtModelo.Name = "txtModelo";
             this.txtModelo.Size = new System.Drawing.Size(121, 20);
-            this.txtModelo.TabIndex = 69;
+            this.txtModelo.TabIndex = 3;
             // 
             // cbanno
             // 
@@ -135,7 +135,7 @@
             this.cbanno.Location = new System.Drawing.Point(133, 215);
             this.cbanno.Name = "cbanno";
             this.cbanno.Size = new System.Drawing.Size(121, 21);
-            this.cbanno.TabIndex = 4;
+            this.cbanno.TabIndex = 5;
             // 
             // btnEliminar
             // 
@@ -236,7 +236,7 @@
             this.txtCosto.Mask = "99999";
             this.txtCosto.Name = "txtCosto";
             this.txtCosto.Size = new System.Drawing.Size(120, 20);
-            this.txtCosto.TabIndex = 6;
+            this.txtCosto.TabIndex = 7;
             this.txtCosto.ValidatingType = typeof(int);
             // 
             // cmbTipo
@@ -251,14 +251,14 @@
             this.cmbTipo.Location = new System.Drawing.Point(133, 255);
             this.cmbTipo.Name = "cmbTipo";
             this.cmbTipo.Size = new System.Drawing.Size(121, 21);
-            this.cmbTipo.TabIndex = 5;
+            this.cmbTipo.TabIndex = 6;
             // 
             // txtMarca
             // 
             this.txtMarca.Location = new System.Drawing.Point(132, 186);
             this.txtMarca.Name = "txtMarca";
             this.txtMarca.Size = new System.Drawing.Size(121, 20);
-            this.txtMarca.TabIndex = 3;
+            this.txtMarca.TabIndex = 4;
             // 
             // txtColor
             // 

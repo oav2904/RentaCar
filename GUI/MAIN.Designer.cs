@@ -36,7 +36,7 @@
             // 
             // BtnUsuarios
             // 
-            this.BtnUsuarios.Location = new System.Drawing.Point(13, 33);
+            this.BtnUsuarios.Location = new System.Drawing.Point(80, 40);
             this.BtnUsuarios.Name = "BtnUsuarios";
             this.BtnUsuarios.Size = new System.Drawing.Size(152, 23);
             this.BtnUsuarios.TabIndex = 0;
@@ -46,7 +46,7 @@
             // 
             // BtnClientes
             // 
-            this.BtnClientes.Location = new System.Drawing.Point(12, 78);
+            this.BtnClientes.Location = new System.Drawing.Point(79, 85);
             this.BtnClientes.Name = "BtnClientes";
             this.BtnClientes.Size = new System.Drawing.Size(153, 23);
             this.BtnClientes.TabIndex = 1;
@@ -56,7 +56,7 @@
             // 
             // BtnVeh
             // 
-            this.BtnVeh.Location = new System.Drawing.Point(12, 125);
+            this.BtnVeh.Location = new System.Drawing.Point(79, 132);
             this.BtnVeh.Name = "BtnVeh";
             this.BtnVeh.Size = new System.Drawing.Size(153, 23);
             this.BtnVeh.TabIndex = 2;
@@ -66,11 +66,11 @@
             // 
             // BtnSedes
             // 
-            this.BtnSedes.Location = new System.Drawing.Point(12, 178);
+            this.BtnSedes.Location = new System.Drawing.Point(79, 185);
             this.BtnSedes.Name = "BtnSedes";
             this.BtnSedes.Size = new System.Drawing.Size(153, 23);
             this.BtnSedes.TabIndex = 3;
-            this.BtnSedes.Text = "Mantenimiento de sedes";
+            this.BtnSedes.Text = "Mantenimiento de Sedes";
             this.BtnSedes.UseVisualStyleBackColor = true;
             this.BtnSedes.Click += new System.EventHandler(this.BtnSedes_Click);
             // 
@@ -78,7 +78,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(220, 271);
+            this.ClientSize = new System.Drawing.Size(311, 271);
             this.Controls.Add(this.BtnSedes);
             this.Controls.Add(this.BtnVeh);
             this.Controls.Add(this.BtnClientes);

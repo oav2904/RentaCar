@@ -35,7 +35,7 @@ namespace GUI
             {
 
 
-                v.User = Convert.ToInt32(cmbUser.SelectedItem);
+                v.User = cmbUser.SelectedIndex+1;
                 v.NumPlaca = txtNumPlaca.Text.Trim();
                 v.Color = txtColor.Text.Trim();
                 v.Marca = txtMarca.Text.Trim();

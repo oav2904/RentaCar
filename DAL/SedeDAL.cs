@@ -115,7 +115,7 @@ namespace DAL
             catch (Exception e)
             {
                 Console.Write(e.Message);
-                e.Source = "Problemas al Insertar el usuario ";
+                e.Source = "Problemas al Insertar la sede ";
 
             }
         }
