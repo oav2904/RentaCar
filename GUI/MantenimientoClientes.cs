@@ -9,8 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Entities;
 using BOL;
-
-
+using DAL;
 using System.Data.SqlClient;
 
 
@@ -191,6 +190,11 @@ namespace GUI
             {
                 e.Cancel = true;
             }
+        }
+
+        private void btnNuevo_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

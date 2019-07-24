@@ -45,7 +45,7 @@
     <Compile Include="FacturaBOL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReservacionBOL.cs" />
-    <Compile Include="SedesBOL.cs" />
+    <Compile Include="SedeBOL.cs" />
     <Compile Include="UsuarioBOL.cs" />
     <Compile Include="VehiculoBOL.cs" />
   </ItemGroup>

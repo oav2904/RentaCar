@@ -9,11 +9,11 @@ using Entities;
 
 namespace DAL
 {
-    public class VehiculoDAL
+    public class SedeDAL
     {
         private Conexion conexion = new Conexion();
         private SqlDataReader leer;
-        readonly Vehiculo v = new Vehiculo();
+        readonly Sede s = new Sede();
 
         public DataTable Lista()
         {
@@ -23,7 +23,7 @@ namespace DAL
                 SqlCommand comando = new SqlCommand
                 {
                     Connection = conexion.AbrirConexion(),
-                    CommandText = "select id,dueño,num_placa,color,marca,anno,tipo,costo_hora,activo from vehiculos where activo =1"
+                    CommandText = "select id,nombre,cuidad, canton, provincia, pais,activo from sedes where activo =1"
                 };
                 leer = comando.ExecuteReader();
                 tabla.Load(leer);
@@ -39,25 +39,23 @@ namespace DAL
 
         }
 
-        public void Actualizar(Vehiculo v)
+        public void Actualizar(Sede s)
         {
             try
             {
-                string query = "Update vehiculos SET dueño = @nombre,num_placa =  @placa," +
-                    " color = @color,marca = @marca,anno = @anno,tipo = @tipo,costo_hora = @costo WHERE id = @id";
+                string query = "Update sedes SET nombre =@nombre,ciudad =@city, canton =@canton, provincia = @provincia, " +
+                    "pais = @pais WHERE id = @id";
 
                 SqlCommand comanda = new SqlCommand(query)
                 {
                     Connection = conexion.AbrirConexion()
                 };
-                comanda.Parameters.AddWithValue("@id", v.ID);
-                comanda.Parameters.AddWithValue("@nombre", v.User);
-                comanda.Parameters.AddWithValue("@placa", v.NumPlaca);
-                comanda.Parameters.AddWithValue("@color", v.Color);
-                comanda.Parameters.AddWithValue("@marca", v.Marca);
-                comanda.Parameters.AddWithValue("@anno", v.Año);
-                comanda.Parameters.AddWithValue("@tipo", v.Tipo);
-                comanda.Parameters.AddWithValue("@costo", v.CostoDia);
+                comanda.Parameters.AddWithValue("@id", s.ID);
+                comanda.Parameters.AddWithValue("@nombre", s.Nombre);
+                comanda.Parameters.AddWithValue("@city", s.Ciudad);
+                comanda.Parameters.AddWithValue("@canton", s.Canton);
+                comanda.Parameters.AddWithValue("@provincia", s.Provincia);
+                comanda.Parameters.AddWithValue("@pais", s.Pais);   
 
                 comanda.ExecuteNonQuery();
                 comanda.Parameters.Clear();
@@ -66,37 +64,37 @@ namespace DAL
             catch (Exception e)
             {
                 Console.WriteLine(e.Source);
-                e.Source = "Problemas al actualizar el vehiculo ";
+                e.Source = "Problemas al actualizar la sede ";
             }
         }
 
-        public void Eliminar(Vehiculo v)
+        public void Eliminar(Sede s)
         {
             try
             {
-                string query = "UPDATE vehiculos  SET activo = 0 where id= @id";
+                string query = "UPDATE sedes  SET activo = 0 where id= @id";
                 SqlCommand comanda = new SqlCommand(query)
                 {
                     Connection = conexion.AbrirConexion()
                 };
-                comanda.Parameters.AddWithValue("@id", v.ID);
+                comanda.Parameters.AddWithValue("@id", s.ID);
                 comanda.ExecuteNonQuery();
                 comanda.Parameters.Clear();
                 comanda.Connection = conexion.CerrarConexion();
             }
             catch (Exception e)
             {
-                e.Source = "Problemas al eliminar el vehiculo ";
+                e.Source = "Problemas al eliminar la sede ";
 
             }
         }
 
-        public void Insertar(Vehiculo v)
+        public void Insertar(Sede s)
         {
             try
             {
-                string query = "INSERT INTO vehiculos(dueño,num_placa,color,marca,anno,tipo,costo_hora)" +
-                    " VALUES (@nombre, @placa,@color, @marca,@anno,@tipo,@costo)";
+                string query = "INSERT INTO sedes(nombre,ciudad,canton, provincia, pais)" +
+                    " VALUES (@nombre, @city,@canton, @provi,@pais)";
 
 
                 SqlCommand comanda = new SqlCommand(query)
@@ -104,13 +102,11 @@ namespace DAL
                     Connection = conexion.AbrirConexion()
                 };
 
-                comanda.Parameters.AddWithValue("@nombre", v.User);
-                comanda.Parameters.AddWithValue("@placa", v.NumPlaca);
-                comanda.Parameters.AddWithValue("@color", v.Color);
-                comanda.Parameters.AddWithValue("@marca", v.Marca);
-                comanda.Parameters.AddWithValue("@anno", v.Año);
-                comanda.Parameters.AddWithValue("@tipo", v.Tipo);
-                comanda.Parameters.AddWithValue("@costo", v.CostoDia);
+                comanda.Parameters.AddWithValue("@nombre", s.Nombre);
+                comanda.Parameters.AddWithValue("@city", s.Ciudad);
+                comanda.Parameters.AddWithValue("@canton", s.Canton);
+                comanda.Parameters.AddWithValue("@provi", s.Provincia);
+                comanda.Parameters.AddWithValue("@pais", s.Pais);  
 
                 comanda.ExecuteNonQuery();
                 comanda.Parameters.Clear();
@@ -119,9 +115,11 @@ namespace DAL
             catch (Exception e)
             {
                 Console.Write(e.Message);
-                e.Source = "Problemas al Insertar el vehiculo ";
+                e.Source = "Problemas al Insertar el usuario ";
 
             }
         }
+
+
     }
 }

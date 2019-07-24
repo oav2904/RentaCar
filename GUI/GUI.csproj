@@ -150,6 +150,10 @@
       <Project>{2894f2a4-d229-4127-a6ee-ccc965480aef}</Project>
       <Name>BOL</Name>
     </ProjectReference>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{eebf7e0e-957c-4a36-8cfb-1f1a6e86760f}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Entities\ENTITIES.csproj">
       <Project>{3f6462a5-de60-4f3c-a8f3-7bcabb13524c}</Project>
       <Name>ENTITIES</Name>

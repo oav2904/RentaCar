@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MantenimientoVehiculos));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtUs = new System.Windows.Forms.TextBox();
             this.cbanno = new System.Windows.Forms.ComboBox();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
@@ -47,7 +48,6 @@
             this.txtColor = new System.Windows.Forms.TextBox();
             this.txtNumPlaca = new System.Windows.Forms.TextBox();
             this.tbVehiculos = new System.Windows.Forms.DataGridView();
-            this.txtUs = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tbVehiculos)).BeginInit();
             this.SuspendLayout();
@@ -75,6 +75,13 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(264, 374);
             this.panel1.TabIndex = 0;
+            // 
+            // txtUs
+            // 
+            this.txtUs.Location = new System.Drawing.Point(132, 27);
+            this.txtUs.Name = "txtUs";
+            this.txtUs.Size = new System.Drawing.Size(121, 20);
+            this.txtUs.TabIndex = 0;
             // 
             // cbanno
             // 
@@ -113,6 +120,7 @@
             this.btnGuardar.TabIndex = 67;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click_1);
             // 
             // btnNuevo
             // 
@@ -238,13 +246,6 @@
             this.tbVehiculos.ReadOnly = true;
             this.tbVehiculos.Size = new System.Drawing.Size(650, 150);
             this.tbVehiculos.TabIndex = 54;
-            // 
-            // txtUs
-            // 
-            this.txtUs.Location = new System.Drawing.Point(132, 27);
-            this.txtUs.Name = "txtUs";
-            this.txtUs.Size = new System.Drawing.Size(121, 20);
-            this.txtUs.TabIndex = 0;
             // 
             // MantenimientoVehiculos
             // 

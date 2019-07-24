@@ -8,37 +8,38 @@ using DAL;
 
 namespace BOL
 {
-    public class SedesBOL
+    public class SedeBOL
     {
-        private SedesDAL sedal = new SedesDAL();
-        public void Guardar(Sedes sedes)
+        private SedeDAL sedal = new SedeDAL();
+
+        public void Guardar(Sede sedes)
         {
 
             Validar(sedes);
 
             if (sedes.ID > 0)
             {
-                //sedal.Actualizar(sedes);
+                sedal.Actualizar(sedes);
             }
             else
             {
-                //sedal.Insertar(sedes);
+                sedal.Insertar(sedes);
 
             }
 
         }
 
 
-        public void Eliminar(Cliente sedes)
+        public void Eliminar(Sede sedes)
         {
             if (sedes.ID <= 0 || sedes == null)
             {
                 throw new Exception("Seleccione una sedes");
             }
-           // sedal.Eliminar(sedes);
+            sedal.Eliminar(sedes);
         }
 
-        public void Validar(Sedes sedes)
+        public void Validar(Sede sedes)
         {
             if (sedes == null)
             {
