@@ -43,7 +43,7 @@ namespace DAL
         {
             try
             {
-                string query = "Update sedes SET nombre =@nombre,ciudad =@city, canton =@canton, provincia = @provincia, " +
+                string query = "Update sedes SET nombre =@nombre,cuidad =@city, canton =@canton, provincia = @provincia, " +
                     "pais = @pais WHERE id = @id";
 
                 SqlCommand comanda = new SqlCommand(query)
@@ -93,7 +93,7 @@ namespace DAL
         {
             try
             {
-                string query = "INSERT INTO sedes(nombre,ciudad,canton, provincia, pais)" +
+                string query = "INSERT INTO sedes(nombre,cuidad,canton, provincia, pais)" +
                     " VALUES (@nombre, @city,@canton, @provi,@pais)";
 
 

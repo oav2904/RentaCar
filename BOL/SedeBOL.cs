@@ -66,10 +66,7 @@ namespace BOL
             {
                 throw new Exception("Ingrese un país para la sede");
             }
-            if (string.IsNullOrWhiteSpace(sedes.Nombre))
-            {
-                throw new Exception("Ingrese un nombre para la sede");
-            }
+            
         }
     }
 }
