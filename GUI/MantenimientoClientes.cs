@@ -56,7 +56,7 @@ namespace GUI
             txtSApellido.Text = c.ApellidoDos;
 
 
-          
+
 
         }
         /// <summary>
@@ -140,37 +140,6 @@ namespace GUI
 
         }
 
-
-        private void tblUs_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            int row = tblUs.SelectedRows.Count > 0 ? tblUs.SelectedRows[0].Index : -1;
-            if (row >= 0)
-            {
-                c.ID = Convert.ToInt32(tblUs["id", row].Value);
-                c.Nombre = tblUs["nombre", row].Value.ToString();
-                c.ApellidoUno = tblUs["primer_apellido", row].Value.ToString();
-                c.ApellidoDos = tblUs["segundo_apellido", row].Value.ToString();
-                c.Cedula = Convert.ToInt32(tblUs["cedula", row].Value);
-                c.Activo = Convert.ToBoolean(tblUs["activo", row].Value);
-                Cargar();
-
-            }
-        }
-
-        private void btnEliminar_Click(object sender, EventArgs e)
-        {
-            Eliminar();
-        }
-
-        private void btnGuardar_Click(object sender, EventArgs e)
-        {
-            Guardar();
-        }
-
-        private void btnNuevo_Click(object sender, EventArgs e)
-        {
-            Nuevo();
-        }
         private void MantenimientoClientes_FormClosing(object sender, FormClosingEventArgs e)
         {
             string mensaje = "¿Está seguro que desea salir del mantenimiento de clientes?";
@@ -194,7 +163,38 @@ namespace GUI
 
         private void btnNuevo_Click_1(object sender, EventArgs e)
         {
+            Nuevo();
+        }
 
+        private void btnGuardar_Click_1(object sender, EventArgs e)
+        {
+            Guardar();
+        }
+
+        private void btnEliminar_Click_1(object sender, EventArgs e)
+        {
+            Eliminar();
+        }
+
+        private void tblUs_CellMouseClick_1(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            int row = tblUs.SelectedRows.Count > 0 ? tblUs.SelectedRows[0].Index : -1;
+            if (row >= 0)
+            {
+                c.ID = Convert.ToInt32(tblUs["id", row].Value);
+                c.Nombre = tblUs["nombre", row].Value.ToString();
+                c.ApellidoUno = tblUs["primer_apellido", row].Value.ToString();
+                c.ApellidoDos = tblUs["segundo_apellido", row].Value.ToString();
+                c.Cedula = Convert.ToInt32(tblUs["cedula", row].Value);
+                c.Activo = Convert.ToBoolean(tblUs["activo", row].Value);
+                Cargar();
+
+            }
+        }
+
+        private void MantenimientoClientes_Load(object sender, EventArgs e)
+        {
+            Lista();
         }
     }
 }

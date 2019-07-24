@@ -59,6 +59,7 @@
             this.btnIngresar.TabIndex = 20;
             this.btnIngresar.Text = "Ingresar";
             this.btnIngresar.UseVisualStyleBackColor = true;
+            this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
             // 
             // label2
             // 
@@ -91,6 +92,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Loggin";
             this.Text = "Loggin";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Loggin_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

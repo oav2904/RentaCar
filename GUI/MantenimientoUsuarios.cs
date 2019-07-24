@@ -9,15 +9,17 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BOL;
 using Entities;
+using DAL;
 
 
 namespace GUI
 {
     public partial class MantenimientoUsuarios : Form
     {
-       
+
         UsuarioBOL usbol;
         Usuario us;
+        UsuarioDAL usdao;
 
         public MantenimientoUsuarios()
         {
@@ -25,9 +27,10 @@ namespace GUI
             //usdao = new UsuarioDAL();
             usbol = new UsuarioBOL();
             us = new Usuario();
+            usdao = new UsuarioDAL();
             Nuevo();
         }
-       
+
         /// <summary>
         /// Este método permite llenar los atributos al usuario, los cuales son
         ///  obtenidos de los datos ingresados por medio de la interfaz gáfica
@@ -40,7 +43,9 @@ namespace GUI
             us.ApellidoDos = txtSApellido.Text.Trim();
             us.User = txtUsuario.Text.Trim();
             us.Password = txtContrasenna.Text.Trim();
-            
+            us.AdminSede = chkAdminSede.Checked;
+            us.DueñoVehiculo = chkDVeh.Checked;
+            us.Password = txtContrasenna.Text.Trim();
 
 
 
@@ -54,11 +59,11 @@ namespace GUI
             txtNombre.Text = us.Nombre;
             txtPApellido.Text = us.ApellidoUno;
             txtSApellido.Text = us.ApellidoDos;
-            txtCodigo.Text = us.Codigo;
-            txtCedula.Text = Convert.ToString(us.Cedula);
-            txtUsuario.Text = us.Usuarios;
+            txtUsuario.Text = us.User;
             txtContrasenna.Text = "";
             txtReContrasenna.Text = "";
+            chkAdminSede.Checked = us.AdminSede;
+            chkDVeh.Checked = us.DueñoVehiculo;
 
         }
         /// <summary>
@@ -88,7 +93,7 @@ namespace GUI
             {
                 string repass = (txtReContrasenna.Text.Trim());
                 Llenar();
-                usbol.guardar(us, repass);
+                usbol.Guardar(us, repass);
                 Nuevo();
                 lblEstado.ResetText();
                 MessageBox.Show("Usuario almacenado con éxito");
@@ -119,7 +124,7 @@ namespace GUI
                         MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (resultado == DialogResult.Yes)
                     {
-                        usbol.eliminar(us);
+                        usbol.Eliminar(us);
                         Nuevo();
                         lblEstado.ResetText();
                         MessageBox.Show("Usuario eliminado con éxito");
@@ -141,21 +146,7 @@ namespace GUI
         private void Lista()
         {
 
-            tblUs.DataSource = usdao.ListaUsuarios();
-        }
-
-
-
-        private void btnGuardar_Click(object sender, EventArgs e)
-        {
-            Guardar();
-            tblUs.DataSource = usdao.ListaUsuarios();
-
-        }
-
-        private void MantenimientoUsuarios_Load(object sender, EventArgs e)
-        {
-            Lista();
+            tblUs.DataSource = usdao.Lista();
         }
         private void MantenimientoUsuarios_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -177,39 +168,52 @@ namespace GUI
                 e.Cancel = true;
             }
         }
-        private void tblUs_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        
+
+        private void btnNuevo_Click_1(object sender, EventArgs e)
+        {
+
+            Nuevo();
+            tblUs.DataSource = usdao.Lista();
+
+        }
+
+        private void btnGuardar_Click_1(object sender, EventArgs e)
+        {
+
+            Guardar();
+            tblUs.DataSource = usdao.Lista();
+        }
+
+        private void btnEliminar_Click_1(object sender, EventArgs e)
+        {
+
+            Eliminar();
+            tblUs.DataSource = usdao.Lista();
+        }
+
+        private void tblUs_CellMouseClick_1(object sender, DataGridViewCellMouseEventArgs e)
         {
             int row = tblUs.SelectedRows.Count > 0 ? tblUs.SelectedRows[0].Index : -1;
             if (row >= 0)
             {
-                us.ID = Convert.ToInt32(tblUs["id_usuario", row].Value);
-                us.Codigo = tblUs["codigo", row].Value.ToString();
+                us.ID = Convert.ToInt32(tblUs["id", row].Value);
                 us.Nombre = tblUs["nombre", row].Value.ToString();
-                us.ApellidoUno = tblUs["papellido", row].Value.ToString();
-                us.ApellidoDos = tblUs["sapellido", row].Value.ToString();
-                us.Cedula = Convert.ToInt32(tblUs["cedula", row].Value.ToString());
-                us.Usuarios = tblUs["usuario", row].Value.ToString();
+                us.ApellidoUno = tblUs["primer_apellido", row].Value.ToString();
+                us.ApellidoDos = tblUs["segundo_apellido", row].Value.ToString();
+                us.User = tblUs["usuario", row].Value.ToString();
                 us.Password = tblUs["contrasenna", row].Value.ToString();
                 us.Activo = Convert.ToBoolean(tblUs["activo", row].Value);
-                us.Admin = Convert.ToBoolean(tblUs["admin", row].Value);
+                us.Admin = Convert.ToBoolean(tblUs["administrador", row].Value);
+                us.AdminSede = Convert.ToBoolean(tblUs["administrador_sede", row].Value);
+                us.DueñoVehiculo = Convert.ToBoolean(tblUs["dueño_veh", row].Value);
                 CargarUsuario();
             }
-
         }
 
-        private void btnEliminar_Click(object sender, EventArgs e)
+        private void MantenimientoUsuarios_Load_1(object sender, EventArgs e)
         {
-            Eliminar();
-            tblUs.DataSource = usdao.ListaUsuarios();
-
-
+            Lista();
         }
-
-        private void btnNuevo_Click(object sender, EventArgs e)
-        {
-            Nuevo();
-            tblUs.DataSource = usdao.ListaUsuarios();
-        }
-
     }
 }

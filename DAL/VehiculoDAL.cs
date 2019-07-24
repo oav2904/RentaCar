@@ -23,7 +23,7 @@ namespace DAL
                 SqlCommand comando = new SqlCommand
                 {
                     Connection = conexion.AbrirConexion(),
-                    CommandText = "select id,dueño,num_placa,color,marca,anno,tipo,costo_hora,activo from vehiculos where activo =1"
+                    CommandText = "select id,dueño,num_placa,color,marca,modelo,anno,tipo,costo_dia,activo from vehiculos where activo =1"
                 };
                 leer = comando.ExecuteReader();
                 tabla.Load(leer);
@@ -44,7 +44,7 @@ namespace DAL
             try
             {
                 string query = "Update vehiculos SET dueño = @nombre,num_placa =  @placa," +
-                    " color = @color,marca = @marca,anno = @anno,tipo = @tipo,costo_hora = @costo WHERE id = @id";
+                    " color = @color,marca = @marca,modelo = @modelo,anno = @anno,tipo = @tipo,costo_dia = @costo WHERE id = @id";
 
                 SqlCommand comanda = new SqlCommand(query)
                 {
@@ -55,6 +55,7 @@ namespace DAL
                 comanda.Parameters.AddWithValue("@placa", v.NumPlaca);
                 comanda.Parameters.AddWithValue("@color", v.Color);
                 comanda.Parameters.AddWithValue("@marca", v.Marca);
+                comanda.Parameters.AddWithValue("@modelo", v.Modelo);
                 comanda.Parameters.AddWithValue("@anno", v.Año);
                 comanda.Parameters.AddWithValue("@tipo", v.Tipo);
                 comanda.Parameters.AddWithValue("@costo", v.CostoDia);
@@ -95,8 +96,8 @@ namespace DAL
         {
             try
             {
-                string query = "INSERT INTO vehiculos(dueño,num_placa,color,marca,anno,tipo,costo_hora)" +
-                    " VALUES (@nombre, @placa,@color, @marca,@anno,@tipo,@costo)";
+                string query = "INSERT INTO vehiculos(dueño,num_placa,color,marca,modelo,anno,tipo,costo_dia)" +
+                    " VALUES (@nombre, @placa,@color, @marca,@modelo,@anno,@tipo,@costo)";
 
 
                 SqlCommand comanda = new SqlCommand(query)
@@ -108,6 +109,7 @@ namespace DAL
                 comanda.Parameters.AddWithValue("@placa", v.NumPlaca);
                 comanda.Parameters.AddWithValue("@color", v.Color);
                 comanda.Parameters.AddWithValue("@marca", v.Marca);
+                comanda.Parameters.AddWithValue("@modelo", v.Marca);
                 comanda.Parameters.AddWithValue("@anno", v.Año);
                 comanda.Parameters.AddWithValue("@tipo", v.Tipo);
                 comanda.Parameters.AddWithValue("@costo", v.CostoDia);
@@ -123,5 +125,27 @@ namespace DAL
 
             }
         }
+
+
+        public List<Usuario> ObtenerUser()
+        {
+            List<Usuario> listas = new List<Usuario>();
+            SqlCommand comando = new SqlCommand();
+            comando.Connection = conexion.AbrirConexion();
+            comando.CommandText = "select id, usuario from usuarios where activo = 1 and dueño_veh = 1 ";
+            leer = comando.ExecuteReader();
+            while (leer.Read())
+            {
+                Usuario c = new Usuario()
+                {
+                    ID = leer.GetInt32(0),
+                    User = leer.GetString(1)
+                };
+                listas.Add(c);
+            }
+            comando.Connection = conexion.CerrarConexion();
+            return listas;
+        }
     }
+
 }

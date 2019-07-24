@@ -24,7 +24,7 @@ namespace DAL
                 {
                     Connection = conexion.AbrirConexion(),
                     CommandText = "select id,nombre,primer_apellido,segundo_apellido,usuario,contrasenna,administrador_sede," +
-                    "dueño_veh,admnistrador,activo from usuarios where activo =1"
+                    "dueño_veh,administrador,activo from usuarios where activo = 1"
                 };
                 leer = comando.ExecuteReader();
                 tabla.Load(leer);
@@ -98,7 +98,7 @@ namespace DAL
         {
             try
             {
-                string query = "INSERT INTO usuarios(nombre,,primer_apellido,segundo_apellido,usuario,contrasenna,administrador_sede, dueño_veh, administrador)" +
+                string query = "INSERT INTO usuarios(nombre,primer_apellido,segundo_apellido,usuario,contrasenna,administrador_sede, dueño_veh, administrador)" +
                     " VALUES (@nombre, @pape,@sape, @user,@contra,@adminse,@dveh,@admin)";
 
 
@@ -128,6 +128,7 @@ namespace DAL
 
             }
         }
+
 
     }
 }

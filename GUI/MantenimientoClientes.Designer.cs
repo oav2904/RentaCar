@@ -43,6 +43,7 @@
             this.lblNombre = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblEstado = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.tblUs)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -55,8 +56,9 @@
             this.tblUs.Location = new System.Drawing.Point(361, 56);
             this.tblUs.Name = "tblUs";
             this.tblUs.ReadOnly = true;
-            this.tblUs.Size = new System.Drawing.Size(650, 150);
+            this.tblUs.Size = new System.Drawing.Size(641, 150);
             this.tblUs.TabIndex = 55;
+            this.tblUs.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.tblUs_CellMouseClick_1);
             // 
             // btnEliminar
             // 
@@ -66,6 +68,7 @@
             this.btnEliminar.TabIndex = 65;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click_1);
             // 
             // btnGuardar
             // 
@@ -75,6 +78,7 @@
             this.btnGuardar.TabIndex = 64;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click_1);
             // 
             // btnNuevo
             // 
@@ -176,11 +180,21 @@
             this.lblEstado.Size = new System.Drawing.Size(0, 13);
             this.lblEstado.TabIndex = 56;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(9, 299);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(22, 13);
+            this.label1.TabIndex = 57;
+            this.label1.Text = "     ";
+            // 
             // MantenimientoClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1045, 321);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.lblEstado);
             this.Controls.Add(this.tblUs);
             this.Controls.Add(this.panel1);
@@ -188,6 +202,7 @@
             this.Name = "MantenimientoClientes";
             this.Text = "MantenimientoClientes";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MantenimientoClientes_FormClosing);
+            this.Load += new System.EventHandler(this.MantenimientoClientes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tblUs)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -212,5 +227,6 @@
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblEstado;
+        private System.Windows.Forms.Label label1;
     }
 }

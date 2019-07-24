@@ -28,12 +28,73 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.BtnUsuarios = new System.Windows.Forms.Button();
+            this.BtnClientes = new System.Windows.Forms.Button();
+            this.BtnVeh = new System.Windows.Forms.Button();
+            this.BtnSedes = new System.Windows.Forms.Button();
+            this.SuspendLayout();
+            // 
+            // BtnUsuarios
+            // 
+            this.BtnUsuarios.Location = new System.Drawing.Point(13, 33);
+            this.BtnUsuarios.Name = "BtnUsuarios";
+            this.BtnUsuarios.Size = new System.Drawing.Size(152, 23);
+            this.BtnUsuarios.TabIndex = 0;
+            this.BtnUsuarios.Text = "Mantenimiento Usuarios";
+            this.BtnUsuarios.UseVisualStyleBackColor = true;
+            this.BtnUsuarios.Click += new System.EventHandler(this.BtnUsuarios_Click);
+            // 
+            // BtnClientes
+            // 
+            this.BtnClientes.Location = new System.Drawing.Point(12, 78);
+            this.BtnClientes.Name = "BtnClientes";
+            this.BtnClientes.Size = new System.Drawing.Size(153, 23);
+            this.BtnClientes.TabIndex = 1;
+            this.BtnClientes.Text = "Mantenimiento de Clientes";
+            this.BtnClientes.UseVisualStyleBackColor = true;
+            this.BtnClientes.Click += new System.EventHandler(this.BtnClientes_Click);
+            // 
+            // BtnVeh
+            // 
+            this.BtnVeh.Location = new System.Drawing.Point(12, 125);
+            this.BtnVeh.Name = "BtnVeh";
+            this.BtnVeh.Size = new System.Drawing.Size(153, 23);
+            this.BtnVeh.TabIndex = 2;
+            this.BtnVeh.Text = "Mantenimiento de Vehículos";
+            this.BtnVeh.UseVisualStyleBackColor = true;
+            this.BtnVeh.Click += new System.EventHandler(this.BtnVeh_Click);
+            // 
+            // BtnSedes
+            // 
+            this.BtnSedes.Location = new System.Drawing.Point(12, 178);
+            this.BtnSedes.Name = "BtnSedes";
+            this.BtnSedes.Size = new System.Drawing.Size(153, 23);
+            this.BtnSedes.TabIndex = 3;
+            this.BtnSedes.Text = "Mantenimiento de sedes";
+            this.BtnSedes.UseVisualStyleBackColor = true;
+            this.BtnSedes.Click += new System.EventHandler(this.BtnSedes_Click);
+            // 
+            // MAIN
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "MAIN";
+            this.ClientSize = new System.Drawing.Size(220, 271);
+            this.Controls.Add(this.BtnSedes);
+            this.Controls.Add(this.BtnVeh);
+            this.Controls.Add(this.BtnClientes);
+            this.Controls.Add(this.BtnUsuarios);
+            this.Name = "MAIN";
+            this.Text = "Menu General";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MAIN_FormClosing);
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Button BtnUsuarios;
+        private System.Windows.Forms.Button BtnClientes;
+        private System.Windows.Forms.Button BtnVeh;
+        private System.Windows.Forms.Button BtnSedes;
     }
 }

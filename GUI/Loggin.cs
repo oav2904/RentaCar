@@ -16,5 +16,17 @@ namespace GUI
         {
             InitializeComponent();
         }
+
+        private void btnIngresar_Click(object sender, EventArgs e)
+        {
+            Form frm = new MAIN();
+            frm.Show();
+            this.Hide();
+        }
+
+        private void Loggin_FormClosing(object sender, FormClosingEventArgs e)
+        {
+
+        }
     }
 }
