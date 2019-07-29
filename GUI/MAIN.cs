@@ -69,5 +69,10 @@ namespace GUI
             }
 
         }
+
+        private void MAIN_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -23,7 +23,7 @@ namespace DAL
                 SqlCommand comando = new SqlCommand
                 {
                     Connection = conexion.AbrirConexion(),
-                    CommandText = "select id,dueño,num_placa,color,marca,modelo,anno,tipo,costo_dia,activo from vehiculos where activo =1"
+                    CommandText = "select * from vehiculos where activo =1"
                 };
                 leer = comando.ExecuteReader();
                 tabla.Load(leer);
@@ -44,7 +44,7 @@ namespace DAL
             try
             {
                 string query = "Update vehiculos SET dueño = @nombre,num_placa =  @placa," +
-                    " color = @color,marca = @marca,modelo = @modelo,anno = @anno,tipo = @tipo,costo_dia = @costo WHERE id = @id";
+                    " color = @color,marca = @marca,modelo = @modelo,anno = @anno,tipo = @tipo,costo_hora = @costo WHERE id = @id";
 
                 SqlCommand comanda = new SqlCommand(query)
                 {
@@ -96,7 +96,7 @@ namespace DAL
         {
             try
             {
-                string query = "INSERT INTO vehiculos(dueño,num_placa,color,marca,modelo,anno,tipo,costo_dia)" +
+                string query = "INSERT INTO vehiculos(dueño,num_placa,color,marca,modelo,anno,tipo,costo_hora)" +
                     " VALUES (@nombre, @placa,@color, @marca,@modelo,@anno,@tipo,@costo)";
 
 

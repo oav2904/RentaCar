@@ -177,11 +177,13 @@ namespace GUI
         private void btnGuardar_Click_1(object sender, EventArgs e)
         {
             Guardar();
+            Lista();
         }
 
         private void btnNuevo_Click_1(object sender, EventArgs e)
         {
             Nuevo();
+            Lista();
         }
 
         private void MantenimientoVehiculos_Load(object sender, EventArgs e)
@@ -212,6 +214,7 @@ namespace GUI
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             Eliminar();
+            Lista();
         }
     }
 }
