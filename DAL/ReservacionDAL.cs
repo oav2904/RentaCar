@@ -64,7 +64,7 @@ namespace DAL
             List<Vehiculo> listas = new List<Vehiculo>();
             SqlCommand comando = new SqlCommand();
             comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "select id, modelo from vehiculos where activo = 1 and marca like 'Hyundai'";
+            comando.CommandText = "select id, modelo from vehiculos where activo = 1 and marca like '@dato'";
             comando.Parameters.AddWithValue("@dato", v);
             leer = comando.ExecuteReader();
             while (leer.Read())
