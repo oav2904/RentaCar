@@ -233,7 +233,7 @@
             // txtCosto
             // 
             this.txtCosto.Location = new System.Drawing.Point(133, 289);
-            this.txtCosto.Mask = "99999";
+            this.txtCosto.Mask = "9999999";
             this.txtCosto.Name = "txtCosto";
             this.txtCosto.Size = new System.Drawing.Size(120, 20);
             this.txtCosto.TabIndex = 7;
