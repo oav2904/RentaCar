@@ -86,6 +86,7 @@
             this.Name = "MAIN";
             this.Text = "Menu General";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MAIN_FormClosing);
+            this.Load += new System.EventHandler(this.MAIN_Load);
             this.ResumeLayout(false);
 
         }

@@ -19,4 +19,5 @@ namespace Entities
         public double CostoDia { get; set; }
         public bool Activo { get; set; }
     }
+    
 }
