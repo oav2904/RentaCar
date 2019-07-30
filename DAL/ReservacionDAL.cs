@@ -44,14 +44,13 @@ namespace DAL
             List<Vehiculo> listas = new List<Vehiculo>();
             SqlCommand comando = new SqlCommand();
             comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "select id, marca from vehiculos where activo = 1 ";
+            comando.CommandText = "select marca from vehiculos where activo = 1 ";
             leer = comando.ExecuteReader();
             while (leer.Read())
             {
                 Vehiculo c = new Vehiculo()
                 {
-                    ID = leer.GetInt32(0),
-                    Marca = leer.GetString(1)
+                    Marca = leer.GetString(0)
                 };
                 listas.Add(c);
             }
@@ -64,15 +63,15 @@ namespace DAL
             List<Vehiculo> listas = new List<Vehiculo>();
             SqlCommand comando = new SqlCommand();
             comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "select id, modelo from vehiculos where activo = 1 and marca like '@dato'";
+            comando.CommandText = "select modelo from vehiculos where activo = 1 and marca like @dato";
+            Console.WriteLine(v);
             comando.Parameters.AddWithValue("@dato", v);
             leer = comando.ExecuteReader();
             while (leer.Read())
             {
                 Vehiculo c = new Vehiculo()
                 {
-                    ID = leer.GetInt32(0),
-                    Modelo = leer.GetString(1)
+                    Modelo = leer.GetString(0)
                    
                 };
                 listas.Add(c);

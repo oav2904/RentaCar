@@ -37,16 +37,25 @@ namespace GUI
 
         private void cargarVehiculos()
         {
-            cmbUsers.DataSource = rdal.ObtenerUser();
-            cmbUsers.DisplayMember = "Nombre";
-            cmbUsers.ValueMember = "ID";
-            cmbMarca.DataSource = rdal.ObtenerVehiculo();
-            cmbMarca.DisplayMember = "Marca";
-            cmbMarca.ValueMember = "ID";
-            string id = cmbMarca.SelectedText;
-            cmbModelo.DataSource = rdal.ObtenerModelo(id);
-            cmbModelo.DisplayMember = "Modelo";
-            cmbModelo.ValueMember = "ID";
+            try
+            {
+                cmbUsers.DataSource = rdal.ObtenerUser();
+                cmbUsers.DisplayMember = "Nombre";
+                cmbUsers.ValueMember = "ID";
+                cmbMarca.DataSource = rdal.ObtenerVehiculo();
+                cmbMarca.DisplayMember = "Marca";
+                cmbMarca.ValueMember = "Marca";
+                string m = Convert.ToString(cmbMarca.SelectedValue);
+                Console.WriteLine(m);
+                cmbModelo.DataSource = rdal.ObtenerModelo(m);
+                cmbModelo.DisplayMember = "Modelo";
+                cmbModelo.ValueMember = "Modelo";
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.StackTrace);
+            }
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
