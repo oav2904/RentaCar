@@ -24,16 +24,87 @@ namespace GUI
             rdal = new ReservacionDAL();
             InitializeComponent();
             cargarVehiculos();
+            Nuevo();
+        }
+        /// <summary>
+        /// Este método permite llenar los atributos al usuario, los cuales son
+        ///  obtenidos de los datos ingresados por medio de la interfaz gáfica
+        /// </summary>
+        private void Llenar()
+        {
+
+            r.Cliente = cmbUsers.SelectedIndex+1;
+            r.Vehiculos = cmbMarca.SelectedIndex+1;
+            r.FechaInicio = Convert.ToDateTime(txtRecogida.Text.Trim());
+            r.FechaFinal = Convert.ToDateTime(txtDevolucion.Text.Trim());
+            r.Costo = Convert.ToInt32(txtCosto.Text.Trim());
+        }
+       
+        /// <summary>
+        /// Metodo que crea un nuevo usuario vacio a la espera de ser almacenado
+        /// </summary>
+        private void Nuevo()
+        {
+            try
+            {
+                r = new Reservacion();
+            }
+            catch (Exception e)
+            {
+               
+
+            }
+        }
+
+        private void Guardar()
+        {
+            try
+            {
+                
+                Llenar();
+                rbol.Guardar(r);
+                Nuevo();
+          
+                MessageBox.Show("Reservación creada con éxito");
+
+            }
+            catch (Exception e)
+            {
+              
+            }
+        }
+
+        private void Lista()
+        {
+
+            dataFacturas.DataSource = rdal.Lista();
         }
 
         private void Facturar_Click(object sender, EventArgs e)
         {
             panel.Visible = true;
-            //txtSubTotal = Costo;
-            //double iva = txtCosto * 0.13;
-            //txtIVA = iva;
-            //txtTotal = costo+iva;
+            int id=0;
+            double subtT;
+            double iva;
+            double precio = 0;
+            double total = 0;
+            foreach (DataGridViewRow row in dataFacturas.Rows)
+            {
+                precio = Convert.ToDouble(row.Cells["costo"].Value);
+                id = Convert.ToInt32(row.Cells["id"].Value);
+
+            }
+            
+            subtT = precio;
+            iva = (subtT * 13) / 100;
+            total = iva + subtT;
+            txtSubTotal.Text = Convert.ToString(subtT);
+            txtIVA.Text = Convert.ToString(iva);
+            txtTotal.Text = Convert.ToString(total);
+            Lista();
+            rbol.Facturar(id);
         }
+
 
         private void cargarVehiculos()
         {
@@ -46,10 +117,11 @@ namespace GUI
                 cmbMarca.DisplayMember = "Marca";
                 cmbMarca.ValueMember = "Marca";
                 string m = Convert.ToString(cmbMarca.SelectedValue);
-                Console.WriteLine(m);
                 cmbModelo.DataSource = rdal.ObtenerModelo(m);
                 cmbModelo.DisplayMember = "Modelo";
                 cmbModelo.ValueMember = "Modelo";
+                string M = Convert.ToString(cmbModelo.SelectedValue);
+                txtCosto.Text = Convert.ToString(rdal.ObtenerCosto(M));
 
             }
             catch (Exception e)
@@ -60,7 +132,8 @@ namespace GUI
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-
+            Guardar();
+            Lista();
         }
 
         private void dataFacturas_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -82,7 +155,8 @@ namespace GUI
 
         private void Reservaciones_Load(object sender, EventArgs e)
         {
-
+            cargarVehiculos();
+            Lista();
         }
     }
 }

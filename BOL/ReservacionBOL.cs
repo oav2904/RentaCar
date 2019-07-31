@@ -12,9 +12,15 @@ namespace BOL
     {
         private ReservacionDAL reserva = new ReservacionDAL();
 
-        public void Cargar( int l)
+    
+        public void Guardar(Reservacion r)
         {
-           
+            reserva.Guardar(r);
+        }
+
+        public void Facturar(int id)
+        {
+            reserva.Facturar(id);
         }
     }
 }

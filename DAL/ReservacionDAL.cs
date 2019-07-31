@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Data.SqlClient;
 using System.Data;
@@ -18,6 +16,59 @@ namespace DAL
         private SqlDataReader leer;
         Vehiculo v = new Vehiculo();
 
+        public void Guardar(Reservacion r)
+        {
+            try
+            {
+                string query = "INSERT INTO reservaciones(vehiculo,fecha_inicio,fecha_final,cliente,costo)" +
+                    " VALUES (@vehiculo, @fechaI,@fechaD, @cliente,@costo)";
+
+
+                SqlCommand comanda = new SqlCommand(query)
+                {
+                    Connection = conexion.AbrirConexion()
+                };
+
+                comanda.Parameters.AddWithValue("@vehiculo",r.Vehiculos);
+                comanda.Parameters.AddWithValue("@fechaI",r.FechaInicio);
+                comanda.Parameters.AddWithValue("@fechaD", r.FechaFinal);
+                comanda.Parameters.AddWithValue("@cliente", r.Cliente);
+                comanda.Parameters.AddWithValue("@costo", r.Costo);
+               
+
+
+                comanda.ExecuteNonQuery();
+                comanda.Parameters.Clear();
+                comanda.Connection = conexion.CerrarConexion();
+            }
+            catch (Exception e)
+            {
+                Console.Write(e.Message);
+                e.Source = "Problemas al crear la reservacion ";
+
+            }
+        }
+
+        public void Facturar(int id)
+        {
+            try
+            {
+                string query = "UPDATE reservaciones  SET activo = 0 where id= @id";
+                SqlCommand comanda = new SqlCommand(query)
+                {
+                    Connection = conexion.AbrirConexion()
+                };
+                comanda.Parameters.AddWithValue("@id",id);
+                comanda.ExecuteNonQuery();
+                comanda.Parameters.Clear();
+                comanda.Connection = conexion.CerrarConexion();
+            }
+            catch (Exception e)
+            {
+                e.Source = "Problemas al facturar la reservación ";
+
+            }
+        }
 
         public object ObtenerUser()
         {
@@ -51,6 +102,51 @@ namespace DAL
                 Vehiculo c = new Vehiculo()
                 {
                     Marca = leer.GetString(0)
+                };
+                listas.Add(c);
+            }
+            comando.Connection = conexion.CerrarConexion();
+            return listas;
+        }
+
+        public object Lista()
+        {
+            try
+            {
+                DataTable tabla = new DataTable();
+                SqlCommand comando = new SqlCommand
+                {
+                    Connection = conexion.AbrirConexion(),
+                    CommandText = "select * from reservaciones where activo =1"
+                };
+                leer = comando.ExecuteReader();
+                tabla.Load(leer);
+                leer.Close();
+                conexion.CerrarConexion();
+                return tabla;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.StackTrace);
+                throw new Exception("Problemas");
+            }
+        }
+
+        public object ObtenerCosto(string m)
+        {
+            List<Vehiculo> listas = new List<Vehiculo>();
+            SqlCommand comando = new SqlCommand();
+            comando.Connection = conexion.AbrirConexion();
+            comando.CommandText = "select costo_hora from vehiculos where activo = 1 and marca like @dato";
+            Console.WriteLine(m);
+            comando.Parameters.AddWithValue("@dato", m);
+            leer = comando.ExecuteReader();
+            while (leer.Read())
+            {
+                Vehiculo c = new Vehiculo()
+                {
+                    CostoDia = leer.GetInt32(0)
+
                 };
                 listas.Add(c);
             }

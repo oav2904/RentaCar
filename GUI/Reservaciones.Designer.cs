@@ -30,16 +30,14 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Reservaciones));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.txtHdevolucion = new System.Windows.Forms.TextBox();
-            this.txtHrecogida = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.cmbModelo = new System.Windows.Forms.ComboBox();
+            this.cmbMarca = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txtDevolucion = new System.Windows.Forms.MaskedTextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtRecogida = new System.Windows.Forms.MaskedTextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnEliminar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -52,12 +50,8 @@
             this.txtSubTotal = new System.Windows.Forms.TextBox();
             this.txtTotal = new System.Windows.Forms.TextBox();
             this.txtIVA = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.Facturar = new System.Windows.Forms.Button();
             this.dataFacturas = new System.Windows.Forms.DataGridView();
-            this.cmbMarca = new System.Windows.Forms.ComboBox();
-            this.cmbModelo = new System.Windows.Forms.ComboBox();
-            this.label11 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataFacturas)).BeginInit();
@@ -68,16 +62,11 @@
             this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.cmbModelo);
             this.panel1.Controls.Add(this.cmbMarca);
-            this.panel1.Controls.Add(this.txtHdevolucion);
-            this.panel1.Controls.Add(this.txtHrecogida);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.txtDevolucion);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.txtRecogida);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.btnEliminar);
             this.panel1.Controls.Add(this.btnGuardar);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label1);
@@ -85,22 +74,33 @@
             this.panel1.Controls.Add(this.cmbUsers);
             this.panel1.Location = new System.Drawing.Point(21, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(290, 386);
+            this.panel1.Size = new System.Drawing.Size(290, 266);
             this.panel1.TabIndex = 0;
             // 
-            // txtHdevolucion
+            // label11
             // 
-            this.txtHdevolucion.Location = new System.Drawing.Point(135, 231);
-            this.txtHdevolucion.Name = "txtHdevolucion";
-            this.txtHdevolucion.Size = new System.Drawing.Size(120, 20);
-            this.txtHdevolucion.TabIndex = 5;
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(41, 82);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(42, 13);
+            this.label11.TabIndex = 90;
+            this.label11.Text = "Modelo";
             // 
-            // txtHrecogida
+            // cmbModelo
             // 
-            this.txtHrecogida.Location = new System.Drawing.Point(135, 185);
-            this.txtHrecogida.Name = "txtHrecogida";
-            this.txtHrecogida.Size = new System.Drawing.Size(120, 20);
-            this.txtHrecogida.TabIndex = 4;
+            this.cmbModelo.FormattingEnabled = true;
+            this.cmbModelo.Location = new System.Drawing.Point(135, 82);
+            this.cmbModelo.Name = "cmbModelo";
+            this.cmbModelo.Size = new System.Drawing.Size(121, 21);
+            this.cmbModelo.TabIndex = 89;
+            // 
+            // cmbMarca
+            // 
+            this.cmbMarca.FormattingEnabled = true;
+            this.cmbMarca.Location = new System.Drawing.Point(134, 44);
+            this.cmbMarca.Name = "cmbMarca";
+            this.cmbMarca.Size = new System.Drawing.Size(121, 21);
+            this.cmbMarca.TabIndex = 88;
             // 
             // label8
             // 
@@ -134,24 +134,6 @@
             this.txtRecogida.Size = new System.Drawing.Size(122, 20);
             this.txtRecogida.TabIndex = 2;
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(37, 193);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(79, 13);
-            this.label4.TabIndex = 83;
-            this.label4.Text = "Hora Recogida";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(31, 231);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(85, 13);
-            this.label3.TabIndex = 81;
-            this.label3.Text = "Hora devolución";
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -161,18 +143,9 @@
             this.label2.TabIndex = 79;
             this.label2.Text = "Vehículos";
             // 
-            // btnEliminar
-            // 
-            this.btnEliminar.Location = new System.Drawing.Point(181, 339);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(75, 23);
-            this.btnEliminar.TabIndex = 77;
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.UseVisualStyleBackColor = true;
-            // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(41, 339);
+            this.btnGuardar.Location = new System.Drawing.Point(40, 224);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 23);
             this.btnGuardar.TabIndex = 76;
@@ -183,7 +156,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(37, 278);
+            this.label7.Location = new System.Drawing.Point(41, 188);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(34, 13);
             this.label7.TabIndex = 74;
@@ -201,7 +174,7 @@
             // txtCosto
             // 
             this.txtCosto.Enabled = false;
-            this.txtCosto.Location = new System.Drawing.Point(135, 271);
+            this.txtCosto.Location = new System.Drawing.Point(134, 188);
             this.txtCosto.Name = "txtCosto";
             this.txtCosto.Size = new System.Drawing.Size(120, 20);
             this.txtCosto.TabIndex = 6;
@@ -279,15 +252,6 @@
             this.txtIVA.Size = new System.Drawing.Size(100, 20);
             this.txtIVA.TabIndex = 63;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(420, 350);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 97;
-            this.button1.Text = "Eliminar";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // Facturar
             // 
             this.Facturar.Location = new System.Drawing.Point(501, 350);
@@ -307,38 +271,12 @@
             this.dataFacturas.TabIndex = 95;
             this.dataFacturas.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataFacturas_CellMouseClick);
             // 
-            // cmbMarca
-            // 
-            this.cmbMarca.FormattingEnabled = true;
-            this.cmbMarca.Location = new System.Drawing.Point(134, 44);
-            this.cmbMarca.Name = "cmbMarca";
-            this.cmbMarca.Size = new System.Drawing.Size(121, 21);
-            this.cmbMarca.TabIndex = 88;
-            // 
-            // cmbModelo
-            // 
-            this.cmbModelo.FormattingEnabled = true;
-            this.cmbModelo.Location = new System.Drawing.Point(135, 82);
-            this.cmbModelo.Name = "cmbModelo";
-            this.cmbModelo.Size = new System.Drawing.Size(121, 21);
-            this.cmbModelo.TabIndex = 89;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(41, 82);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(42, 13);
-            this.label11.TabIndex = 90;
-            this.label11.Text = "Modelo";
-            // 
             // Reservaciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(836, 457);
             this.Controls.Add(this.panel);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.Facturar);
             this.Controls.Add(this.dataFacturas);
             this.Controls.Add(this.panel1);
@@ -362,17 +300,12 @@
         private System.Windows.Forms.MaskedTextBox txtDevolucion;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.MaskedTextBox txtRecogida;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.MaskedTextBox txtCosto;
         private System.Windows.Forms.ComboBox cmbUsers;
-        private System.Windows.Forms.TextBox txtHdevolucion;
-        private System.Windows.Forms.TextBox txtHrecogida;
         private System.Windows.Forms.Panel panel;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label9;
@@ -380,7 +313,6 @@
         private System.Windows.Forms.TextBox txtSubTotal;
         private System.Windows.Forms.TextBox txtTotal;
         private System.Windows.Forms.TextBox txtIVA;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button Facturar;
         private System.Windows.Forms.DataGridView dataFacturas;
         private System.Windows.Forms.Label label11;

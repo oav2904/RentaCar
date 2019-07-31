@@ -36,11 +36,6 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.rentarCreta = new System.Windows.Forms.LinkLabel();
-            this.rentarYaris = new System.Windows.Forms.LinkLabel();
-            this.rentarElantra = new System.Windows.Forms.LinkLabel();
-            this.rentarTucson = new System.Windows.Forms.LinkLabel();
-            this.rentarRIO = new System.Windows.Forms.LinkLabel();
-            this.rentarMontero = new System.Windows.Forms.LinkLabel();
             this.costoCreta = new System.Windows.Forms.Label();
             this.costoYaris = new System.Windows.Forms.Label();
             this.costoElantra = new System.Windows.Forms.Label();
@@ -129,78 +124,13 @@
             this.rentarCreta.AutoSize = true;
             this.rentarCreta.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rentarCreta.LinkColor = System.Drawing.Color.Black;
-            this.rentarCreta.Location = new System.Drawing.Point(126, 273);
+            this.rentarCreta.Location = new System.Drawing.Point(507, 620);
             this.rentarCreta.Name = "rentarCreta";
-            this.rentarCreta.Size = new System.Drawing.Size(45, 15);
+            this.rentarCreta.Size = new System.Drawing.Size(113, 15);
             this.rentarCreta.TabIndex = 7;
             this.rentarCreta.TabStop = true;
-            this.rentarCreta.Text = "Rentar";
+            this.rentarCreta.Text = "Rentar un Vehiculo";
             this.rentarCreta.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.rentarCreta_LinkClicked);
-            // 
-            // rentarYaris
-            // 
-            this.rentarYaris.AutoSize = true;
-            this.rentarYaris.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rentarYaris.LinkColor = System.Drawing.Color.Black;
-            this.rentarYaris.Location = new System.Drawing.Point(527, 273);
-            this.rentarYaris.Name = "rentarYaris";
-            this.rentarYaris.Size = new System.Drawing.Size(45, 15);
-            this.rentarYaris.TabIndex = 8;
-            this.rentarYaris.TabStop = true;
-            this.rentarYaris.Text = "Rentar";
-            this.rentarYaris.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.rentarYaris_LinkClicked);
-            // 
-            // rentarElantra
-            // 
-            this.rentarElantra.AutoSize = true;
-            this.rentarElantra.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rentarElantra.LinkColor = System.Drawing.Color.Black;
-            this.rentarElantra.Location = new System.Drawing.Point(933, 273);
-            this.rentarElantra.Name = "rentarElantra";
-            this.rentarElantra.Size = new System.Drawing.Size(45, 15);
-            this.rentarElantra.TabIndex = 9;
-            this.rentarElantra.TabStop = true;
-            this.rentarElantra.Text = "Rentar";
-            this.rentarElantra.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.rentarElantra_LinkClicked);
-            // 
-            // rentarTucson
-            // 
-            this.rentarTucson.AutoSize = true;
-            this.rentarTucson.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rentarTucson.LinkColor = System.Drawing.Color.Black;
-            this.rentarTucson.Location = new System.Drawing.Point(126, 635);
-            this.rentarTucson.Name = "rentarTucson";
-            this.rentarTucson.Size = new System.Drawing.Size(45, 15);
-            this.rentarTucson.TabIndex = 10;
-            this.rentarTucson.TabStop = true;
-            this.rentarTucson.Text = "Rentar";
-            this.rentarTucson.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.rentarTucson_LinkClicked);
-            // 
-            // rentarRIO
-            // 
-            this.rentarRIO.AutoSize = true;
-            this.rentarRIO.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rentarRIO.LinkColor = System.Drawing.Color.Black;
-            this.rentarRIO.Location = new System.Drawing.Point(527, 635);
-            this.rentarRIO.Name = "rentarRIO";
-            this.rentarRIO.Size = new System.Drawing.Size(45, 15);
-            this.rentarRIO.TabIndex = 11;
-            this.rentarRIO.TabStop = true;
-            this.rentarRIO.Text = "Rentar";
-            this.rentarRIO.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.rentarRIO_LinkClicked);
-            // 
-            // rentarMontero
-            // 
-            this.rentarMontero.AutoSize = true;
-            this.rentarMontero.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rentarMontero.LinkColor = System.Drawing.Color.Black;
-            this.rentarMontero.Location = new System.Drawing.Point(921, 635);
-            this.rentarMontero.Name = "rentarMontero";
-            this.rentarMontero.Size = new System.Drawing.Size(45, 15);
-            this.rentarMontero.TabIndex = 12;
-            this.rentarMontero.TabStop = true;
-            this.rentarMontero.Text = "Rentar";
-            this.rentarMontero.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.rentarMontero_LinkClicked);
             // 
             // costoCreta
             // 
@@ -261,11 +191,6 @@
             this.Controls.Add(this.costoElantra);
             this.Controls.Add(this.costoYaris);
             this.Controls.Add(this.costoCreta);
-            this.Controls.Add(this.rentarMontero);
-            this.Controls.Add(this.rentarRIO);
-            this.Controls.Add(this.rentarTucson);
-            this.Controls.Add(this.rentarElantra);
-            this.Controls.Add(this.rentarYaris);
             this.Controls.Add(this.rentarCreta);
             this.Controls.Add(this.pictureBox7);
             this.Controls.Add(this.pictureBox6);
@@ -299,11 +224,6 @@
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.LinkLabel rentarCreta;
-        private System.Windows.Forms.LinkLabel rentarYaris;
-        private System.Windows.Forms.LinkLabel rentarElantra;
-        private System.Windows.Forms.LinkLabel rentarTucson;
-        private System.Windows.Forms.LinkLabel rentarRIO;
-        private System.Windows.Forms.LinkLabel rentarMontero;
         private System.Windows.Forms.Label costoCreta;
         private System.Windows.Forms.Label costoYaris;
         private System.Windows.Forms.Label costoElantra;
