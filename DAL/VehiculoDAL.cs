@@ -44,7 +44,7 @@ namespace DAL
             try
             {
                 string query = "Update vehiculos SET dueño = @nombre,num_placa =  @placa," +
-                    " color = @color,marca = @marca,modelo = @modelo,anno = @anno,tipo = @tipo,costo_dia = @costo WHERE id = @id";
+                    " color = @color,marca = @marca,modelo = @modelo,anno = @anno,tipo = @tipo,costo_hora = @costo WHERE id = @id";
 
                 SqlCommand comanda = new SqlCommand(query)
                 {
@@ -96,7 +96,7 @@ namespace DAL
         {
             try
             {
-                string query = "INSERT INTO vehiculos(dueño,num_placa,color,marca,modelo,anno,tipo,costo_dia)" +
+                string query = "INSERT INTO vehiculos(dueño,num_placa,color,marca,modelo,anno,tipo,costo_hora)" +
                     " VALUES (@nombre, @placa,@color, @marca,@modelo,@anno,@tipo,@costo)";
 
 
@@ -130,9 +130,11 @@ namespace DAL
         public List<Usuario> ObtenerUser()
         {
             List<Usuario> listas = new List<Usuario>();
-            SqlCommand comando = new SqlCommand();
-            comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "select id, usuario from usuarios where activo = 1 and dueño_veh = 1 ";
+            SqlCommand comando = new SqlCommand
+            {
+                Connection = conexion.AbrirConexion(),
+                CommandText = "select id, usuario from usuarios where activo = 1 and dueño_veh = 1 "
+            };
             leer = comando.ExecuteReader();
             while (leer.Read())
             {

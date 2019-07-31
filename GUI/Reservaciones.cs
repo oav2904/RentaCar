@@ -23,7 +23,7 @@ namespace GUI
             rbol = new ReservacionBOL();
             rdal = new ReservacionDAL();
             InitializeComponent();
-            cargarVehiculos();
+            CargarVehiculos();
             Nuevo();
         }
         /// <summary>
@@ -106,7 +106,7 @@ namespace GUI
         }
 
 
-        private void cargarVehiculos()
+        private void CargarVehiculos()
         {
             try
             {
@@ -122,6 +122,9 @@ namespace GUI
                 cmbModelo.ValueMember = "Modelo";
                 string M = Convert.ToString(cmbModelo.SelectedValue);
                 txtCosto.Text = Convert.ToString(rdal.ObtenerCosto(M));
+                rdal.ObtenerCosto(M);
+
+
 
             }
             catch (Exception e)
@@ -155,8 +158,9 @@ namespace GUI
 
         private void Reservaciones_Load(object sender, EventArgs e)
         {
-            cargarVehiculos();
+            //CargarVehiculos();
             Lista();
+
         }
     }
 }

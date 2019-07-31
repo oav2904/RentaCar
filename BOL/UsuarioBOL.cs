@@ -29,16 +29,16 @@ namespace BOL
 
         }
 
-        //public Usuario Iniciar(Usuario u)
+        public Usuario Iniciar(Usuario u)
 
-        //{
-        //    if (String.IsNullOrEmpty(u.User) || String.IsNullOrEmpty(u.Password))
-        //    {
-        //        throw new Exception("Usuario y Contraseña requeridos");
-        //    }
+        {
+            if (String.IsNullOrEmpty(u.User) || String.IsNullOrEmpty(u.Password))
+            {
+                throw new Exception("Usuario y Contraseña requeridos");
+            }
 
-        //    return usdao.Iniciar(u);
-        //}
+            return usdao.Iniciar(u);
+        }
         public void Eliminar(Usuario us)
         {
             if (us.ID <= 0 || us == null)

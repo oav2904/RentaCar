@@ -201,7 +201,6 @@
             this.Controls.Add(this.pictureBox1);
             this.Name = "MenúReserva";
             this.Text = "MenúReserva";
-            this.Load += new System.EventHandler(this.MenúReserva_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();

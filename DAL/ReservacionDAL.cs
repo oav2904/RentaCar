@@ -14,7 +14,8 @@ namespace DAL
 
         private Conexion conexion = new Conexion();
         private SqlDataReader leer;
-        Vehiculo v = new Vehiculo();
+        private SqlDataReader leer2;
+        readonly Vehiculo v = new Vehiculo();
 
         public void Guardar(Reservacion r)
         {
@@ -40,6 +41,8 @@ namespace DAL
                 comanda.ExecuteNonQuery();
                 comanda.Parameters.Clear();
                 comanda.Connection = conexion.CerrarConexion();
+                leer.Close();
+
             }
             catch (Exception e)
             {
@@ -62,6 +65,8 @@ namespace DAL
                 comanda.ExecuteNonQuery();
                 comanda.Parameters.Clear();
                 comanda.Connection = conexion.CerrarConexion();
+                leer.Close();
+
             }
             catch (Exception e)
             {
@@ -73,9 +78,11 @@ namespace DAL
         public object ObtenerUser()
         {
             List<Cliente> listas = new List<Cliente>();
-            SqlCommand comando = new SqlCommand();
-            comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "select id, nombre from clientes where activo = 1";
+            SqlCommand comando = new SqlCommand
+            {
+                Connection = conexion.AbrirConexion(),
+                CommandText = "select id, nombre from clientes where activo = 1"
+            };
             leer = comando.ExecuteReader();
             while (leer.Read())
             {
@@ -86,6 +93,7 @@ namespace DAL
                 };
                 listas.Add(c);
             }
+            leer.Close();
             comando.Connection = conexion.CerrarConexion();
             return listas;
         }
@@ -93,9 +101,11 @@ namespace DAL
         public object ObtenerVehiculo()
         {
             List<Vehiculo> listas = new List<Vehiculo>();
-            SqlCommand comando = new SqlCommand();
-            comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "select marca from vehiculos where activo = 1 ";
+            SqlCommand comando = new SqlCommand
+            {
+                Connection = conexion.AbrirConexion(),
+                CommandText = "select marca from vehiculos where activo = 1 "
+            };
             leer = comando.ExecuteReader();
             while (leer.Read())
             {
@@ -106,31 +116,30 @@ namespace DAL
                 listas.Add(c);
             }
             comando.Connection = conexion.CerrarConexion();
+            leer.Close();
             return listas;
         }
 
-        public object Lista()
+        public DataTable Lista()
         {
-            try
-            {
+            
                 DataTable tabla = new DataTable();
-                SqlCommand comando = new SqlCommand
-                {
-                    Connection = conexion.AbrirConexion(),
-                    CommandText = "select * from reservaciones where activo =1"
-                };
-                leer = comando.ExecuteReader();
+            SqlCommand comando = new SqlCommand
+            {
+                Connection = conexion.AbrirConexion(),
+                CommandText = "select * from reservaciones where activo = 1",
+               
+            };
+            leer = comando.ExecuteReader();
                 tabla.Load(leer);
                 leer.Close();
-                conexion.CerrarConexion();
+                comando.Connection = conexion.CerrarConexion();
+            leer.Close();
                 return tabla;
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.StackTrace);
-                throw new Exception("Problemas");
-            }
+          
         }
+
+    
 
         public object ObtenerCosto(string m)
         {
@@ -138,7 +147,8 @@ namespace DAL
             SqlCommand comando = new SqlCommand();
             comando.Connection = conexion.AbrirConexion();
             comando.CommandText = "select costo_hora from vehiculos where activo = 1 and marca like @dato";
-            Console.WriteLine(m);
+            
+            Console.WriteLine(m + " Im here");
             comando.Parameters.AddWithValue("@dato", m);
             leer = comando.ExecuteReader();
             while (leer.Read())
@@ -151,16 +161,18 @@ namespace DAL
                 listas.Add(c);
             }
             comando.Connection = conexion.CerrarConexion();
+            leer.Close();
             return listas;
         }
 
         public object ObtenerModelo(string v)
         {
             List<Vehiculo> listas = new List<Vehiculo>();
-            SqlCommand comando = new SqlCommand();
-            comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "select modelo from vehiculos where activo = 1 and marca like @dato";
-            Console.WriteLine(v);
+            SqlCommand comando = new SqlCommand
+            {
+                Connection = conexion.AbrirConexion(),
+                CommandText = "select modelo from vehiculos where activo = 1 and marca like @dato"
+            };
             comando.Parameters.AddWithValue("@dato", v);
             leer = comando.ExecuteReader();
             while (leer.Read())
@@ -173,6 +185,8 @@ namespace DAL
                 listas.Add(c);
             }
             comando.Connection = conexion.CerrarConexion();
+            leer.Close();
+
             return listas;
         }
     }

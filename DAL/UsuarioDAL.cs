@@ -130,5 +130,39 @@ namespace DAL
         }
 
 
+    public Usuario Iniciar(Usuario u)
+    {
+        SqlCommand comando = new SqlCommand();
+        comando.Connection = conexion.AbrirConexion();
+        comando.CommandText = "select id_usuario,usuario,contrasenna,activo,administrador, administrador_sede, dueño_veh from usuarios where (usuario like @usuario) and (contrasenna like  @contrasenna)";
+        comando.Parameters.AddWithValue("@usuario", u.User);
+        comando.Parameters.AddWithValue("@contrasenna", u.Password);
+        SqlDataReader rs = comando.ExecuteReader();
+
+        if (rs.Read())
+        {
+            u = Carga(rs);
+        }
+        conexion.CerrarConexion();
+        return u;
     }
+    private Usuario Carga(SqlDataReader rs)
+    {
+        Usuario usu = new Usuario
+        {
+            ID = rs.GetInt32(0),
+            User = rs.GetString(1),
+            Password = rs.GetString(2),
+            Activo = rs.GetBoolean(3),
+            Admin = rs.GetBoolean(4),
+            AdminSede = rs.GetBoolean(5),
+            DueñoVehiculo = rs.GetBoolean(6)
+
+
+        };
+        return usu;
+    }
+
+}
+
 }
